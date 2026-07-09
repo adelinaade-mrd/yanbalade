@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanbal - Belleza y Joyeria | Tu Directora Independiente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #C9A96E;
+            --gold-light: #E8D5B7;
+            --dark: #1A1A1A;
+            --rose: #D4A5A5;
+            --cream: #FAF7F2;
+            --text: #4A4A4A;
+            --yape: #742284;
+            --yape-light: #9B59B6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #2D2D2D 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--cream);
+            font-weight: 300;
+            font-size: 0.9rem;
+            display: block;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .whatsapp-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 100vh;
+            background: linear-gradient(rgba(26,26,26,0.4), rgba(26,26,26,0.6)), 
+                        url('hero_genactive.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: var(--cream);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201,169,110,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            margin-left: 1rem;
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .btn-yape {
+            background: var(--yape);
+            border-color: var(--yape);
+            color: white;
+        }
+
+        .btn-yape:hover {
+            background: transparent;
+            color: var(--yape);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content h2 span {
+            color: var(--gold);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gold-line {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto;
+        }
+
+        .categories-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--cream);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .category-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .category-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .category-icon {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 2rem;
+            z-index: 2;
+        }
+
+        .category-info {
+            padding: 1.5rem;
+        }
+
+        .category-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .category-info p {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* Featured Products */
+        .featured {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            height: 300px;
+            background: linear-gradient(135deg, var(--gold-light), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 1.5rem;
+        }
+
+        .product-details h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+        }
+
+        .price .currency {
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .product-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .product-btn:hover {
+            background: var(--gold);
+        }
+
+        /* Shopping Cart Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .modal h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .yape-info {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border: 2px dashed var(--yape);
+        }
+
+        .yape-info i {
+            font-size: 3rem;
+            color: var(--yape);
+            margin-bottom: 0.5rem;
+        }
+
+        .yape-info h4 {
+            color: var(--yape);
+            margin-bottom: 0.5rem;
+        }
+
+        .yape-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--yape);
+            letter-spacing: 2px;
+        }
+
+        .yape-steps {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .yape-steps li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .yape-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--yape);
+            font-weight: 700;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            text-align: center;
+        }
+
+        .payment-section h2 {
+            color: var(--yape);
+            margin-bottom: 1rem;
+        }
+
+        .payment-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .yape-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(116, 34, 132, 0.15);
+        }
+
+        .yape-card i {
+            font-size: 4rem;
+            color: var(--yape);
+            margin-bottom: 1rem;
+        }
+
+        .yape-card h3 {
+            color: var(--yape);
+            margin-bottom: 0.5rem;
+        }
+
+        .yape-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 3px;
+            margin: 1rem 0;
+        }
+
+        .yape-card .name {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--dark), #2D2D2D);
+            color: white;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: var(--gold);
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(201,169,110,0.2);
+        }
+
+        .testimonial-card i {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .client-name {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-item i.whatsapp-icon {
+            background: #25D366;
+        }
+
+        .contact-item i.yape-icon {
+            background: var(--yape);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark);
+            color: var(--gold);
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .admin-panel.active {
+            display: flex;
+        }
+
+        .admin-container {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold-light);
+        }
+
+        .admin-header h2 {
+            color: var(--dark);
+        }
+
+        .admin-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .admin-tab {
+            padding: 0.5rem 1.5rem;
+            background: none;
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--gold);
+            transition: all 0.3s;
+        }
+
+        .admin-tab.active,
+        .admin-tab:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .admin-product-item {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .admin-product-img {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold-light), var(--rose));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .admin-product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .admin-product-info input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .admin-product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .admin-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .admin-btn-save {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .admin-btn-delete {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .admin-btn-add {
+            background: var(--dark);
+            color: var(--gold);
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .admin-login {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .admin-login h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-login input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .admin-login button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .admin-login button:hover {
+            background: var(--dark);
+            color: var(--gold);
+        }
+
+        .admin-toggle {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--dark);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 998;
+            border: 2px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .admin-toggle:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* Social Media */
+        .social {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        .social h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--dark);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--cream);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--cream);
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201,169,110,0.2);
+            padding-top: 2rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .admin-product-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .admin-product-img {
+                margin: 0 auto;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        /* ========================
+           CARRITO DE COMPRAS
+           ======================== */
+
+        .cart-float {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(201, 169, 110, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+
+        .cart-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.6);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cart-count.hidden {
+            display: none;
+        }
+
+        /* Modal del carrito */
+        .cart-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .cart-modal-overlay.active {
+            display: flex;
+        }
+
+        .cart-modal {
+            background: white;
+            border-radius: 20px;
+            max-width: 550px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        .cart-modal h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 60px 1fr auto auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            background: var(--cream);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold-light), var(--rose));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-info h4 {
+            color: var(--dark);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .cart-item-info p {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: white;
+            color: var(--gold);
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+            padding: 0;
+        }
+
+        .qty-btn:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+        .qty-value {
+            font-weight: 700;
+            color: var(--dark);
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .cart-item-subtotal {
+            text-align: right;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.3rem;
+            transition: transform 0.2s;
+        }
+
+        .cart-item-remove:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #999;
+        }
+
+        .cart-empty i {
+            font-size: 3rem;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .cart-total-section {
+            border-top: 2px solid var(--gold-light);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .cart-total-row.total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            border-top: 1px dashed var(--gold);
+            padding-top: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .cart-actions .btn {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Botón agregar al carrito en tarjeta de producto */
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .product-actions .product-btn {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        .btn-cart {
+            background: var(--gold);
+            color: var(--dark);
+            border: 2px solid var(--gold);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            flex: 1;
+        }
+
+        .btn-cart:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background: var(--dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .cart-float {
+                bottom: 100px;
+                right: 30px;
+            }
+            .cart-item {
+                grid-template-columns: 50px 1fr auto;
+                gap: 0.7rem;
+            }
+            .cart-item-img {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            .cart-item-subtotal {
+                grid-column: 2 / -1;
+                text-align: left;
+                margin-top: 0.3rem;
+            }
+            .cart-actions {
+                flex-direction: column;
+            }
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                YANBAL
+                <span>Belleza & Joyeria</span>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#catalogos">Catalogos</a></li>
+                    <li><a href="#pago">Pago</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/51981855363" target="_blank" class="whatsapp-float" id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-tooltip" id="whatsappTooltip">Escribeme!</div>
+
+    <!-- Cart Floating Button -->
+    <button class="cart-float" onclick="openCartModal()" title="Ver carrito">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count hidden" id="cartCount">0</span>
+    </button>
+
+
+    <!-- Admin Toggle Button -->
+    <div class="admin-toggle" onclick="openAdminLogin()" title="Panel de Administracion">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Descubre Tu Belleza Interior</h1>
+            <p>Productos de alta calidad en cosmeticos y joyeria que transforman vidas. Se parte de nuestra comunidad Yanbal.</p>
+            <a href="#categorias" class="btn">Ver Catalogo</a>
+            <a href="https://wa.me/51981855363" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Escribeme</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-image scroll-reveal">
+            <img src="nosotros_catalogo.gif" alt="Eficacia Clinica Yanbal">
+        </div>
+        <div class="about-content scroll-reveal">
+            <h2>Tu Directora <span>Yanbal</span></h2>
+            <p>Bienvenida a mi espacio de belleza. Como <strong>Directora Independiente de Yanbal</strong>, te ofrezco los mejores productos de <strong>maquillaje, tratamientos faciales, cuidado personal, perfumes y joyeria</strong> de alta calidad.</p>
+            <p>Mi mision es ayudarte a realizar tu belleza natural con productos que cuidan tu piel y complementan tu estilo unico. Como Directora, tambien tengo la oportunidad de guiar a otras mujeres a construir su propio negocio. Dejame asesorarte para encontrar lo que mejor se adapte a ti!</p>
+            <a href="https://wa.me/51981855363" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Contactame por WhatsApp</a>
+        </div>
+    </section>
+
+            <!-- Categories Section -->
+    <section class="categories" id="categorias">
+        <div class="section-header scroll-reveal">
+            <h2>Nuestras Categorias</h2>
+            <div class="gold-line"></div>
+            <p>Explora nuestra amplia gama de productos disenados para realzar tu belleza y estilo</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card scroll-reveal">
+                <div class="category-img" style="background-image: url('tratamiento_facial_extracto.gif');">
+                    <div class="category-icon"><i class="fas fa-spa"></i></div>
+                </div>
+                <div class="category-info">
+                    <h3>Tratamiento Facial</h3>
+                    <p>Cremas, serums y productos especializados para el cuidado de tu piel con formulas innovadoras.</p>
+                </div>
+            </div>
+            <div class="category-card scroll-reveal">
+                <div class="category-img" style="background-image: url('cuidado_personal_bodyspa.gif');">
+                    <div class="category-icon"><i class="fas fa-pump-soap"></i></div>
+                </div>
+                <div class="category-info">
+                    <h3>Cuidado Personal</h3>
+                    <p>Productos para tu rutina diaria de higiene y cuidado corporal con fragancias exclusivas.</p>
+                </div>
+            </div>
+            <div class="category-card scroll-reveal">
+                <div class="category-img" style="background-image: url('maquillaje_labiales.gif');">
+                    <div class="category-icon"><i class="fas fa-paint-brush"></i></div>
+                </div>
+                <div class="category-info">
+                    <h3>Maquillaje</h3>
+                    <p>Desde bases hasta labiales, encuentra todo lo necesario para crear looks increibles.</p>
+                </div>
+            </div>
+            <div class="category-card scroll-reveal">
+                <div class="category-img" style="background-image: url('perfumes_ccori.gif');">
+                    <div class="category-icon"><i class="fas fa-spray-can"></i></div>
+                </div>
+                <div class="category-info">
+                    <h3>Perfumes</h3>
+                    <p>Fragancias exclusivas que definen tu personalidad y dejan una huella inolvidable.</p>
+                </div>
+            </div>
+            <div class="category-card scroll-reveal">
+                <div class="category-img" style="background-image: url('joyeria_bisuteria.gif');">
+                    <div class="category-icon"><i class="fas fa-gem"></i></div>
+                </div>
+                <div class="category-info">
+                    <h3>Joyeria</h3>
+                    <p>Elegantes piezas de bisuteria y accesorios que complementan tu estilo unico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Featured Products -->
+    <section class="featured" id="productos">
+        <div class="section-header scroll-reveal">
+            <h2>Productos Destacados</h2>
+            <div class="gold-line"></div>
+            <p>Los favoritos de nuestras clientas esta temporada</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products rendered by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Catalogos Public Section -->
+    <section class="categories" id="catalogos" style="background: var(--cream);">
+        <div id="catalogosPublicSection"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="scroll-reveal">Lo que dicen nuestras clientas</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card scroll-reveal">
+                <i class="fas fa-quote-left"></i>
+                <p>"Los productos de Yanbal son increibles. Mi piel ha cambiado completamente desde que uso el tratamiento facial. Totalmente recomendado!"</p>
+                <div class="client-name">- Maria G.</div>
+            </div>
+            <div class="testimonial-card scroll-reveal">
+                <i class="fas fa-quote-left"></i>
+                <p>"La joyeria es hermosa y de excelente calidad. Siempre recibo cumplidos cuando uso mis piezas Yanbal. La atencion de mi Directora es excelente."</p>
+                <div class="client-name">- Laura P.</div>
+            </div>
+            <div class="testimonial-card scroll-reveal">
+                <i class="fas fa-quote-left"></i>
+                <p>"El maquillaje dura todo el dia y los colores son preciosos. Me encanta que me asesoren para elegir lo mejor para mi tono de piel."</p>
+                <div class="client-name">- Carmen R.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-info scroll-reveal">
+            <h2>Lista para brillar?</h2>
+            <p style="margin-bottom: 2rem;">Contactame para recibir asesoria personalizada, conocer las promociones de la campana actual o realzar tu pedido.</p>
+
+            <div class="contact-item">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>
+                <div>
+                    <strong>WhatsApp</strong>
+                    <p>+51 981 855 363</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-mobile-alt yape-icon"></i>
+                <div>
+                    <strong>Yape</strong>
+                    <p>981 855 363</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email</strong>
+                    <p>ade26_26@hotmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Ubicacion</strong>
+                    <p>Consulta virtual y entregas a domicilio</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Horario de Atencion</strong>
+                    <p>Todos los días: 9:00 am - 8:00 pm</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form scroll-reveal">
+            <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Enviame un mensaje</h3>
+            <form onsubmit="event.preventDefault(); sendWhatsAppMessage();">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="contactName" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electronico</label>
+                    <input type="email" placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Telefono</label>
+                    <input type="tel" placeholder="+51 999 888 777">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" id="contactMessage" placeholder="En que puedo ayudarte?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar por WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social">
+        <h3>Escribeme por WhatsApp</h3>
+        <div class="social-links">
+            <a href="https://wa.me/51981855363" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>YANBAL</h4>
+                <p>Belleza como medio para transformar vidas. Productos de alta calidad que se ocupan de tu belleza natural.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#categorias">Tratamiento Facial</a></li>
+                    <li><a href="#categorias">Cuidado Personal</a></li>
+                    <li><a href="#categorias">Maquillaje</a></li>
+                    <li><a href="#categorias">Perfumes</a></li>
+                    <li><a href="#categorias">Joyeria</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#productos">Catalogo Digital</a></li>
+                    <li><a href="#pago">Pago con Yape</a></li>
+                    <li><a href="#contacto">Unete al Equipo</a></li>
+                    <li><a href="#">Politica de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 Yanbal Directora Independiente. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Buy Modal -->
+    <div class="modal-overlay" id="buyModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeBuyModal()">&times;</button>
+            <h3><i class="fas fa-shopping-bag"></i> Comprar Producto</h3>
+            <div id="buyModalContent">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Cart Modal -->
+    <div class="cart-modal-overlay" id="cartModal">
+        <div class="cart-modal">
+            <button class="modal-close" onclick="closeCartModal()">&times;</button>
+            <h3><i class="fas fa-shopping-cart" style="color: var(--gold);"></i> Tu Carrito</h3>
+            <div id="cartItemsContainer">
+                <!-- Items rendered by JS -->
+            </div>
+            <div id="cartTotalSection" style="display: none;">
+                <div class="cart-total-section">
+                    <div class="cart-total-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">S/ 0.00</span>
+                    </div>
+                    <div class="cart-total-row">
+                        <span>Delivery</span>
+                        <span id="cartDelivery">S/ 10.00</span>
+                    </div>
+                    <div class="cart-total-row total">
+                        <span>Total a pagar</span>
+                        <span id="cartTotal">S/ 0.00</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-yape" onclick="checkoutCart()" style="flex: 1;">
+                        <i class="fab fa-whatsapp"></i> Pagar por Yape
+                    </button>
+                    <button class="btn btn-outline" onclick="closeCartModal()" style="flex: 1; border-color: #ccc; color: #666;">
+                        Seguir comprando
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-container">
+            <div id="adminLoginSection">
+                <div class="admin-login">
+                    <h3><i class="fas fa-lock"></i> Panel de Administracion</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text);">Ingresa tus credenciales para gestionar tu tienda</p>
+                    <input type="text" id="adminUser" placeholder="Usuario" value="">
+                    <input type="password" id="adminPass" placeholder="Contrasena" value="">
+                    <button onclick="loginAdmin()">Ingresar</button>
+                    <p id="loginError" style="color: #e74c3c; margin-top: 1rem; display: none;">Usuario o contrasena incorrectos</p>
+                </div>
+            </div>
+            <div id="adminDashboard" style="display: none;">
+                <div class="admin-header">
+                    <h2><i class="fas fa-cog"></i> Panel de Administracion</h2>
+                    <button class="admin-close" onclick="closeAdminPanel()">&times;</button>
+                </div>
+                <div class="admin-tabs">
+                    <button class="admin-tab active" onclick="switchTab('products')">Productos</button>
+                    <button class="admin-tab" onclick="switchTab('images')">Imagenes</button>
+                    <button class="admin-tab" onclick="switchTab('addproduct')">Agregar Producto</button>
+                    <button class="admin-tab" onclick="switchTab('catalogos')">Catalogos</button>
+                    <button class="admin-tab" onclick="switchTab('account')">Ajustes de mi Cuenta</button>
+                </div>
+                <div class="admin-section active" id="tab-products">
+                    <h3>Gestionar Productos</h3>
+                    <div id="adminProductsList"></div>
+                    <button class="admin-btn admin-btn-add" onclick="addNewProduct()">
+                        <i class="fas fa-plus"></i> Agregar Producto
+                    </button>
+                </div>
+                <div class="admin-section" id="tab-images">
+                    <h3>Gestionar Imagenes</h3>
+                    <p style="margin-bottom: 1rem;">Ingresa la URL de la imagen para cada producto:</p>
+                    <div id="adminImagesList"></div>
+                </div>
+                <div class="admin-section" id="tab-addproduct">
+                    <h3><i class="fas fa-plus-circle"></i> Agregar Nuevo Producto</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text);">Completa los datos del nuevo producto y sube su foto desde tu computadora.</p>
+
+                    <div style="background: var(--cream); border-radius: 15px; padding: 2rem; max-width: 600px; margin: 0 auto;">
+                        <div class="form-group">
+                            <label><i class="fas fa-tag" style="color: var(--gold); margin-right: 0.5rem;"></i>Nombre del Producto</label>
+                            <input type="text" id="newProductName" placeholder="Ej: Fragancia Dulce Vanidad">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left" style="color: var(--gold); margin-right: 0.5rem;"></i>Descripcion del Producto</label>
+                            <textarea id="newProductDesc" rows="3" placeholder="Ej: Perfume femenino con notas florales y amaderadas"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-dollar-sign" style="color: var(--gold); margin-right: 0.5rem;"></i>Precio (en soles PEN)</label>
+                            <input type="number" step="0.01" id="newProductPrice" placeholder="Ej: 45.00">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-image" style="color: var(--gold); margin-right: 0.5rem;"></i>Foto del Producto</label>
+                            <div style="border: 2px dashed var(--gold); border-radius: 10px; padding: 1.5rem; text-align: center; background: white;">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem;"></i>
+                                <p style="margin-bottom: 1rem; color: var(--text);">Haz clic en el boton para seleccionar una foto desde tu computadora</p>
+
+                                <input type="file" id="newProductImage" accept="image/*" style="display: none;" onchange="previewNewProductImage(this)">
+
+                                <button type="button" onclick="document.getElementById('newProductImage').click()" style="background: var(--gold); color: var(--dark); border: none; padding: 1rem 2rem; border-radius: 50px; cursor: pointer; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+                                    <i class="fas fa-plus"></i> Examinar
+                                </button>
+
+                                <div id="newProductImagePreview" style="margin-top: 1rem; display: none;">
+                                    <img id="previewImg" src="" alt="Vista previa" style="max-width: 200px; max-height: 200px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text);">Vista previa</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-list" style="color: var(--gold); margin-right: 0.5rem;"></i>Categoria</label>
+                            <select id="newProductCategory" style="width: 100%; padding: 1rem; border: 2px solid #E0E0E0; border-radius: 10px; font-family: 'Montserrat', sans-serif;">
+                                <option value="Tratamiento Facial">Tratamiento Facial</option>
+                                <option value="Cuidado Personal">Cuidado Personal</option>
+                                <option value="Maquillaje">Maquillaje</option>
+                                <option value="Perfumes">Perfumes</option>
+                                <option value="Joyeria">Joyeria</option>
+                            </select>
+                        </div>
+
+                        <button class="admin-btn admin-btn-save" onclick="saveNewProduct()" style="width: 100%; padding: 1rem; margin-top: 1rem; font-size: 1.1rem;">
+                            <i class="fas fa-save"></i> Guardar Producto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="admin-section" id="tab-catalogos">
+                    <h3><i class="fas fa-book-open"></i> Gestion de Catalogos</h3>
+                    <p style="margin-bottom: 1.5rem;">Agrega los enlaces a los nuevos catalogos de cada campana para que tus clientas puedan verlos.</p>
+
+                    <div id="catalogosList"></div>
+
+                    <div style="background: var(--cream); border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--dark);"><i class="fas fa-plus-circle"></i> Agregar Nuevo Catalogo</h4>
+                        <div class="form-group">
+                            <label>Nombre del Catalogo (ej: Campana 7 - Julio 2026)</label>
+                            <input type="text" id="newCatalogoNombre" placeholder="Campana X - Mes Año">
+                        </div>
+                        <div class="form-group">
+                            <label>Enlace al Catalogo (PDF o enlace web)</label>
+                            <input type="text" id="newCatalogoLink" placeholder="https://...">
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de la Campana</label>
+                            <input type="text" id="newCatalogoFecha" placeholder="Del 1 al 30 de Julio 2026">
+                        </div>
+                        <button class="admin-btn admin-btn-add" onclick="addCatalogo()">
+                            <i class="fas fa-plus"></i> Agregar Catalogo
+                        </button>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1rem; background: #fff3cd; border-radius: 10px; border-left: 4px solid var(--gold);">
+                        <p style="margin: 0; font-size: 0.9rem;"><i class="fas fa-info-circle"></i> <strong>Tip:</strong> Puedes subir tu catalogo a Google Drive, Dropbox o cualquier servicio y pegar el enlace aqui.</p>
+                    </div>
+                </div>
+
+                <div class="admin-section" id="tab-account">
+                    <h3><i class="fas fa-user-cog"></i> Ajustes de mi Cuenta</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text);">Gestiona tu usuario, contrasena y seguridad de la cuenta.</p>
+
+                    <div style="background: var(--cream); border-radius: 15px; padding: 2rem; max-width: 600px; margin: 0 auto;">
+
+                        <h4 style="color: var(--dark); margin-bottom: 1rem; border-bottom: 2px solid var(--gold-light); padding-bottom: 0.5rem;">
+                            <i class="fas fa-user-edit" style="color: var(--gold);"></i> Cambiar Usuario
+                        </h4>
+
+                        <div class="form-group">
+                            <label>Usuario Actual</label>
+                            <input type="text" id="currentUser" placeholder="Ingresa tu usuario actual">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Usuario Nuevo</label>
+                            <input type="text" id="newUser" placeholder="Ingresa tu nuevo usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirma tu Usuario Nuevo</label>
+                            <input type="text" id="confirmNewUser" placeholder="Confirma tu nuevo usuario">
+                        </div>
+
+                        <button class="admin-btn admin-btn-save" onclick="changeUsername()" style="width: 100%; margin-bottom: 2rem;">
+                            <i class="fas fa-save"></i> Guardar Nuevo Usuario
+                        </button>
+
+                        <h4 style="color: var(--dark); margin-bottom: 1rem; border-bottom: 2px solid var(--gold-light); padding-bottom: 0.5rem;">
+                            <i class="fas fa-lock" style="color: var(--gold);"></i> Cambiar Contrasena
+                        </h4>
+
+                        <div class="form-group">
+                            <label>Contrasena Actual</label>
+                            <input type="password" id="currentPass" placeholder="Ingresa tu contrasena actual">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contrasena Nueva</label>
+                            <input type="password" id="newPass" placeholder="Ingresa tu nueva contrasena">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirma tu Contrasena Nueva</label>
+                            <input type="password" id="confirmNewPass" placeholder="Confirma tu nueva contrasena">
+                        </div>
+
+                        <button class="admin-btn admin-btn-save" onclick="changePassword()" style="width: 100%; margin-bottom: 2rem;">
+                            <i class="fas fa-save"></i> Guardar Nueva Contrasena
+                        </button>
+
+                        <div style="background: #fff3cd; border-radius: 10px; padding: 1rem; border-left: 4px solid var(--gold); margin-top: 1rem;">
+                            <p style="margin: 0; font-size: 0.9rem;">
+                                <i class="fas fa-info-circle" style="color: var(--gold);"></i> 
+                                <strong>Correo de recuperacion:</strong> ade26_26@hotmail.com
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURACION - CREDENCIALES DE ADMIN
+        // ============================================
+        const ADMIN_USER = "yanbal2026";
+        const ADMIN_PASS = "DirectoraYanbal@363";
+
+        // ============================================
+        // DATOS DE PRODUCTOS (almacenados en localStorage)
+        // ============================================
+        let products = JSON.parse(localStorage.getItem('yanbal_products')) || [
+            {
+                id: 1,
+                name: "Fragancia Exclusiva Yanbal",
+                description: "Perfume femenino con notas florales y amaderadas",
+                price: 45.00,
+                image: "",
+                icon: "fa-spray-can",
+                category: "Perfumes"
+            },
+            {
+                id: 2,
+                name: "Kit de Cuidado Facial",
+                description: "Rutina completa de limpieza e hidratacion",
+                price: 38.50,
+                image: "",
+                icon: "fa-pump-soap",
+                category: "Tratamiento Facial"
+            },
+            {
+                id: 3,
+                name: "Set de Joyeria Elegance",
+                description: "Collar y aretes con diseno sofisticado",
+                price: 29.90,
+                image: "",
+                icon: "fa-gem",
+                category: "Joyeria"
+            },
+            {
+                id: 4,
+                name: "Base Liquida Perfect Skin",
+                description: "Cobertura perfecta con acabado natural",
+                price: 35.00,
+                image: "",
+                icon: "fa-paint-brush",
+                category: "Maquillaje"
+            },
+            {
+                id: 5,
+                name: "Crema Hidratante Intensiva",
+                description: "Hidratacion 24 horas para todo tipo de piel",
+                price: 42.00,
+                image: "",
+                icon: "fa-spa",
+                category: "Tratamiento Facial"
+            },
+            {
+                id: 6,
+                name: "Set de Aretes Primavera",
+                description: "Diseno delicado con cristales Swarovski",
+                price: 25.00,
+                image: "",
+                icon: "fa-gem",
+                category: "Joyeria"
+            }
+        ];
+
+        // ============================================
+        // RENDERIZAR PRODUCTOS
+        // ============================================
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card scroll-reveal">
+                    <div class="product-img">
+                        ${product.image ? `<img src="${product.image}" alt="${product.name}">` : `<i class="fas ${product.icon}"></i>`}
+                    </div>
+                    <div class="product-details">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="price">S/ ${product.price.toFixed(2)} <span class="currency">PEN</span></div>
+                        <div class="product-actions">
+                            <button class="product-btn" onclick="openBuyModal(${product.id})">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                            <button class="btn-cart" onclick="addToCart(${product.id})">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+        }
+
+        // ============================================
+        // MODAL DE COMPRA
+        // ============================================
+        function openBuyModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const content = document.getElementById('buyModalContent');
+            content.innerHTML = `
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;">
+                        <i class="fas ${product.icon}"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 0.5rem;">${product.name}</h4>
+                    <p style="color: var(--text); margin-bottom: 1rem;">${product.description}</p>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--gold);">
+                        S/ ${product.price.toFixed(2)} <span style="font-size: 1rem; font-weight: 400;">PEN</span>
+                    </div>
+                </div>
+
+                <div class="yape-info">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Paga con Yape</h4>
+                    <p style="margin-bottom: 0.5rem;">Numero: <span class="yape-number">981 855 363</span></p>
+                    <p style="font-size: 0.9rem;">Directora Yanbal Independiente</p>
+                </div>
+
+                <ol class="yape-steps">
+                    <li>Abre tu app Yape y escanea o ingresa el numero <strong>981 855 363</strong></li>
+                    <li>Ingresa el monto exacto de <strong>S/ ${product.price.toFixed(2)}</strong></li>
+                    <li>En el concepto escribe: <strong>${product.name}</strong></li>
+                    <li>Realiza el pago y guarda el comprobante</li>
+                    <li>Enviame el screenshot del pago por WhatsApp para confirmar tu pedido</li>
+                </ol>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                    <button onclick="addToCart(${product.id}); closeBuyModal();" class="btn" style="flex: 1; text-align: center;">
+                        <i class="fas fa-cart-plus"></i> Agregar al carrito
+                    </button>
+                    <a href="https://wa.me/51981855363?text=Hola%2C%20quiero%20comprar%20el%20producto%3A%20${encodeURIComponent(product.name)}%20-%20S%2F%20${product.price.toFixed(2)}.%20Ya%20realice%20el%20pago%20por%20Yape%20al%20981%20855%20363" 
+                       target="_blank" class="btn btn-yape" style="flex: 1; text-align: center; display: block;">
+                        <i class="fab fa-whatsapp"></i> Comprar ahora
+                    </a>
+                </div>
+            `;
+
+            document.getElementById('buyModal').classList.add('active');
+        }
+
+        function closeBuyModal() {
+            document.getElementById('buyModal').classList.remove('active');
+        }
+
+        // ============================================
+        // WHATSAPP FUNCTIONS
+        // ============================================
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('contactName').value;
+            const message = document.getElementById('contactMessage').value;
+            const text = `Hola, soy ${name}. ${message}`;
+            window.open(`https://wa.me/51981855363?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // WhatsApp tooltip
+        setTimeout(() => {
+            document.getElementById('whatsappTooltip').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('whatsappTooltip').classList.remove('show');
+            }, 5000);
+        }, 3000);
+
+        // ============================================
+        // ADMIN PANEL
+        // ============================================
+        function openAdminLogin() {
+            document.getElementById('adminPanel').classList.add('active');
+            document.getElementById('adminLoginSection').style.display = 'block';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('active');
+        }
+
+        function loginAdmin() {
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+
+            if (user === ADMIN_USER && pass === ADMIN_PASS) {
+                document.getElementById('adminLoginSection').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                document.getElementById('loginError').style.display = 'none';
+                renderAdminProducts();
+                renderAdminImages();
+                renderCatalogos();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+
+        function renderAdminProducts() {
+            const list = document.getElementById('adminProductsList');
+            list.innerHTML = products.map(product => `
+                <div class="admin-product-item">
+                    <div class="admin-product-img">
+                        ${product.image ? `<img src="${product.image}" alt="${product.name}">` : `<i class="fas ${product.icon}"></i>`}
+                    </div>
+                    <div class="admin-product-info">
+                        <input type="text" value="${product.name}" id="name-${product.id}" placeholder="Nombre del producto">
+                        <input type="text" value="${product.description}" id="desc-${product.id}" placeholder="Descripcion">
+                        <input type="number" step="0.01" value="${product.price}" id="price-${product.id}" placeholder="Precio en soles">
+                    </div>
+                    <div class="admin-product-actions">
+                        <button class="admin-btn admin-btn-save" onclick="saveProduct(${product.id})">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                        <button class="admin-btn admin-btn-delete" onclick="deleteProduct(${product.id})">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAdminImages() {
+            const list = document.getElementById('adminImagesList');
+            list.innerHTML = products.map(product => `
+                <div class="admin-product-item">
+                    <div class="admin-product-img">
+                        ${product.image ? `<img src="${product.image}" alt="${product.name}">` : `<i class="fas ${product.icon}"></i>`}
+                    </div>
+                    <div class="admin-product-info">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">${product.name}</p>
+                        <input type="text" value="${product.image}" id="img-${product.id}" placeholder="URL de la imagen (dejar vacio para usar icono)">
+                    </div>
+                    <div class="admin-product-actions">
+                        <button class="admin-btn admin-btn-save" onclick="saveImage(${product.id})">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                product.name = document.getElementById('name-' + id).value;
+                product.description = document.getElementById('desc-' + id).value;
+                product.price = parseFloat(document.getElementById('price-' + id).value);
+                localStorage.setItem('yanbal_products', JSON.stringify(products));
+                renderProducts();
+                alert('Producto guardado correctamente');
+            }
+        }
+
+        function saveImage(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                product.image = document.getElementById('img-' + id).value;
+                localStorage.setItem('yanbal_products', JSON.stringify(products));
+                renderProducts();
+                renderAdminProducts();
+                renderAdminImages();
+                renderCatalogos();
+                alert('Imagen guardada correctamente');
+            }
+        }
+
+        function deleteProduct(id) {
+            if (confirm('Estas segura de eliminar este producto?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('yanbal_products', JSON.stringify(products));
+                renderProducts();
+                renderAdminProducts();
+                renderAdminImages();
+                renderCatalogos();
+            }
+        }
+
+        function addNewProduct() {
+            const newId = Math.max(...products.map(p => p.id), 0) + 1;
+            products.push({
+                id: newId,
+                name: "Nuevo Producto",
+                description: "Descripcion del producto",
+                price: 0.00,
+                image: "",
+                icon: "fa-star",
+                category: "General"
+            });
+            localStorage.setItem('yanbal_products', JSON.stringify(products));
+            renderProducts();
+            renderAdminProducts();
+            renderAdminImages();
+        }
+
+        // ============================================
+        // CATALOGOS MANAGEMENT
+        // ============================================
+        let catalogos = JSON.parse(localStorage.getItem('yanbal_catalogos')) || [];
+
+        function renderCatalogos() {
+            const list = document.getElementById('catalogosList');
+            if (catalogos.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #999; padding: 2rem;">No hay catalogos agregados aun.</p>';
+                return;
+            }
+            list.innerHTML = catalogos.map((cat, index) => `
+                <div class="admin-product-item" style="grid-template-columns: 1fr auto;">
+                    <div class="admin-product-info">
+                        <p style="font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; font-size: 1.1rem;">
+                            <i class="fas fa-book" style="color: var(--gold); margin-right: 0.5rem;"></i>${cat.nombre}
+                        </p>
+                        <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 0.3rem;">
+                            <i class="fas fa-calendar-alt" style="color: var(--gold); margin-right: 0.3rem;"></i>${cat.fecha}
+                        </p>
+                        <a href="${cat.link}" target="_blank" style="color: var(--yape); font-size: 0.85rem; text-decoration: none;">
+                            <i class="fas fa-external-link-alt"></i> ${cat.link}
+                        </a>
+                    </div>
+                    <div class="admin-product-actions">
+                        <button class="admin-btn admin-btn-delete" onclick="deleteCatalogo(${index})">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addCatalogo() {
+            const nombre = document.getElementById('newCatalogoNombre').value.trim();
+            const link = document.getElementById('newCatalogoLink').value.trim();
+            const fecha = document.getElementById('newCatalogoFecha').value.trim();
+
+            if (!nombre || !link) {
+                alert('Por favor completa al menos el nombre y el enlace del catalogo.');
+                return;
+            }
+
+            catalogos.unshift({ nombre, link, fecha, id: Date.now() });
+            localStorage.setItem('yanbal_catalogos', JSON.stringify(catalogos));
+
+            document.getElementById('newCatalogoNombre').value = '';
+            document.getElementById('newCatalogoLink').value = '';
+            document.getElementById('newCatalogoFecha').value = '';
+
+            renderCatalogos();
+            renderCatalogosPublic();
+            alert('Catalogo agregado correctamente');
+        }
+
+        function deleteCatalogo(index) {
+            if (confirm('Estas segura de eliminar este catalogo?')) {
+                catalogos.splice(index, 1);
+                localStorage.setItem('yanbal_catalogos', JSON.stringify(catalogos));
+                renderCatalogos();
+                renderCatalogosPublic();
+            }
+        }
+
+        // ============================================
+        // PUBLIC CATALOGOS SECTION (Visible en la web)
+        // ============================================
+        function renderCatalogosPublic() {
+            const publicSection = document.getElementById('catalogosPublicSection');
+            if (!publicSection) return;
+
+            if (catalogos.length === 0) {
+                publicSection.innerHTML = '';
+                return;
+            }
+
+            publicSection.innerHTML = `
+                <div class="section-header scroll-reveal">
+                    <h2><i class="fas fa-book-open"></i> Catalogos Disponibles</h2>
+                    <div class="gold-line"></div>
+                    <p>Consulta nuestros catalogos digitales de cada campana</p>
+                </div>
+                <div class="catalogos-grid" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    ${catalogos.map(cat => `
+                        <a href="${cat.link}" target="_blank" class="catalogo-card" style="background: white; border-radius: 15px; padding: 1.5rem; text-decoration: none; color: inherit; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.3s; display: block;">
+                            <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 style="color: var(--dark); margin-bottom: 0.5rem;">${cat.nombre}</h3>
+                            <p style="color: var(--text); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <i class="fas fa-calendar-alt" style="color: var(--gold); margin-right: 0.3rem;"></i>${cat.fecha || 'Ver catalogo'}
+                            </p>
+                            <span style="color: var(--yape); font-weight: 600; font-size: 0.9rem;">
+                                <i class="fas fa-eye"></i> Ver Catalogo
+                            </span>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+
+            document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+        }
+
+        function saveSettings() {
+            alert('Configuracion guardada correctamente');
+        }
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // ============================================
+        // SMOOTH SCROLL
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // SCROLL REVEAL
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // ============================================
+        // HEADER SCROLL EFFECT
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26,26,26,0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--dark) 0%, #2D2D2D 100%)';
+            }
+        });
+
+        // ============================================
+        // CLOSE MODALS ON OUTSIDE CLICK
+        // ============================================
+        document.getElementById('buyModal').addEventListener('click', function(e) {
+            if (e.target === this) closeBuyModal();
+        });
+
+        document.getElementById('adminPanel').addEventListener('click', function(e) {
+            if (e.target === this) closeAdminPanel();
+        });
+
+        // ============================================
+        // FORGOT PASSWORD FUNCTIONS
+        // ============================================
+        function showForgotPassword() {
+            document.querySelector('.admin-login').style.display = 'none';
+            document.getElementById('forgotPasswordSection').style.display = 'block';
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        function showLoginAgain() {
+            document.querySelector('.admin-login').style.display = 'block';
+            document.getElementById('forgotPasswordSection').style.display = 'none';
+            document.getElementById('recoveryMessage').style.display = 'none';
+        }
+
+        function sendRecoveryEmail() {
+            const email = document.getElementById('recoveryEmail').value;
+            if (email) {
+                document.getElementById('recoveryMessage').style.display = 'block';
+                setTimeout(() => {
+                    alert('En un sitio web real, se enviarian instrucciones a: ' + email + '\n\nPara esta pagina local, tus credenciales son:\nUsuario: yanbal2026\nContrasena: DirectoraYanbal@363');
+                }, 500);
+            } else {
+                alert('Por favor ingresa un correo valido.');
+            }
+        }
+
+        // ============================================
+        // ADD NEW PRODUCT FUNCTIONS
+        // ============================================
+        let newProductImageBase64 = '';
+
+        function previewNewProductImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('newProductImagePreview').style.display = 'block';
+                    newProductImageBase64 = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function saveNewProduct() {
+            const name = document.getElementById('newProductName').value.trim();
+            const desc = document.getElementById('newProductDesc').value.trim();
+            const price = parseFloat(document.getElementById('newProductPrice').value);
+            const category = document.getElementById('newProductCategory').value;
+
+            if (!name || !desc || isNaN(price) || price <= 0) {
+                alert('Por favor completa todos los campos correctamente.');
+                return;
+            }
+
+            const newId = Math.max(...products.map(p => p.id), 0) + 1;
+            const iconMap = {
+                'Tratamiento Facial': 'fa-spa',
+                'Cuidado Personal': 'fa-pump-soap',
+                'Maquillaje': 'fa-paint-brush',
+                'Perfumes': 'fa-spray-can',
+                'Joyeria': 'fa-gem'
+            };
+
+            const newProduct = {
+                id: newId,
+                name: name,
+                description: desc,
+                price: price,
+                image: newProductImageBase64,
+                icon: iconMap[category] || 'fa-star',
+                category: category
+            };
+
+            products.push(newProduct);
+            localStorage.setItem('yanbal_products', JSON.stringify(products));
+
+            // Clear form
+            document.getElementById('newProductName').value = '';
+            document.getElementById('newProductDesc').value = '';
+            document.getElementById('newProductPrice').value = '';
+            document.getElementById('newProductImage').value = '';
+            document.getElementById('newProductImagePreview').style.display = 'none';
+            newProductImageBase64 = '';
+
+            // Refresh displays
+            renderProducts();
+            renderAdminProducts();
+            renderAdminImages();
+
+            alert('Producto "' + name + '" guardado correctamente!');
+        }
+
+
+        // ============================================
+        // CARRITO DE COMPRAS
+        // ============================================
+        let cart = JSON.parse(localStorage.getItem('yanbal_cart')) || [];
+        const DELIVERY_FEE = 10.00;
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    price: product.price,
+                    image: product.image,
+                    icon: product.icon,
+                    qty: 1
+                });
+            }
+
+            saveCart();
+            updateCartCount();
+            showToast(`"${product.name}" agregado al carrito`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartCount();
+            renderCartItems();
+        }
+
+        function updateQty(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+
+            item.qty += change;
+            if (item.qty <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            saveCart();
+            updateCartCount();
+            renderCartItems();
+        }
+
+        function saveCart() {
+            localStorage.setItem('yanbal_cart', JSON.stringify(cart));
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cartCount');
+            if (totalItems > 0) {
+                badge.textContent = totalItems;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function openCartModal() {
+            renderCartItems();
+            document.getElementById('cartModal').classList.add('active');
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').classList.remove('active');
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            const totalSection = document.getElementById('cartTotalSection');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Tu carrito está vacío</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">¡Agrega productos y aprovecha el delivery por solo S/10!</p>
+                    </div>
+                `;
+                totalSection.style.display = 'none';
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        ${item.image ? `<img src="${item.image}" alt="${item.name}">` : `<i class="fas ${item.icon}"></i>`}
+                    </div>
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>S/ ${item.price.toFixed(2)} c/u</p>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
+                        <span class="qty-value">${item.qty}</span>
+                        <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                    </div>
+                    <div style="text-align: right;">
+                        <div class="cart-item-subtotal">S/ ${(item.price * item.qty).toFixed(2)}</div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" title="Eliminar">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Calcular totales
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const total = subtotal + DELIVERY_FEE;
+
+            document.getElementById('cartSubtotal').textContent = `S/ ${subtotal.toFixed(2)}`;
+            document.getElementById('cartDelivery').textContent = `S/ ${DELIVERY_FEE.toFixed(2)}`;
+            document.getElementById('cartTotal').textContent = `S/ ${total.toFixed(2)}`;
+            totalSection.style.display = 'block';
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const total = subtotal + DELIVERY_FEE;
+
+            let message = '¡Hola! Quiero realizar el siguiente pedido:
+
+';
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} x${item.qty} = S/ ${(item.price * item.qty).toFixed(2)}
+`;
+            });
+            message += `
+Subtotal: S/ ${subtotal.toFixed(2)}`;
+            message += `
+Delivery: S/ ${DELIVERY_FEE.toFixed(2)}`;
+            message += `
+*TOTAL: S/ ${total.toFixed(2)}*`;
+            message += `
+
+Ya realicé el pago por Yape al 981 855 363. Adjunto el comprobante.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/51981855363?text=${encodedMessage}`, '_blank');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // Cerrar modal del carrito al hacer clic fuera
+        document.getElementById('cartModal').addEventListener('click', function(e) {
+            if (e.target === this) closeCartModal();
+        });
+
+        // ============================================
+        // INITIALIZE
+        // ============================================
+        renderProducts();
+        renderCatalogosPublic();
+        updateCartCount();
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+    </script>
+
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Producto agregado al carrito</span>
+    </div>
+
+</body>
+</html>
